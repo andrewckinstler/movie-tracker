@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { fetchMovies } from '../apiCalls/apiCalls'
-
+import { fetchMovies } from '../apiCalls/apiCalls';
+import { connect } from 'react-redux';
+import { addMovies } from '../actions/index'
 import './App.css';
 
 export class App extends Component {
@@ -14,7 +15,7 @@ export class App extends Component {
 
   async componentDidMount () {
     const movies = await fetchMovies(this.state.counter)
-    this.setState({ movies: movies.results })
+    this.props.addMovies(movies.results)
   }
 
   async getMovies() {
@@ -37,4 +38,8 @@ export class App extends Component {
   }
 }
 
-export default App;
+export const mapDispatchToProps = dispatch => ({
+  addMovies: movies => dispatch( addMovies(movies) )
+})
+
+export default connect(null, mapDispatchToProps)(App);
