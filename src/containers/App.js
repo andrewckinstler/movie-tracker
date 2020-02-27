@@ -7,8 +7,7 @@ export class App extends Component {
     super()
     this.state = {
       movies: [],
-      counter: 1,
-      loading: true
+      counter: 1
     }
   }
 
