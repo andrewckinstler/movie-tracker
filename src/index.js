@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { createStore } from 'redux';
+import { BrowserRouter } from 'react-router-dom'
 
 const store = createStore(rootReducer, composeWithDevTools());
 
