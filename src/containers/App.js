@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { fetchMovies } from '../apiCalls/apiCalls'
+
 import './App.css';
 
 export class App extends Component {
