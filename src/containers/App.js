@@ -8,7 +8,6 @@ export class App extends Component {
   constructor() {
     super()
     this.state = {
-      movies: [],
       counter: 1
     }
   }
@@ -19,13 +18,14 @@ export class App extends Component {
   }
 
   async getMovies() {
-    this.pageCounter()
-    const movies = await fetchMovies(this.state.counter)
-    this.setState({ movies: movies.results })
+    const nextCount = this.state.counter + 1;
+    this.pageCounter(nextCount);
+    const movies = await fetchMovies(nextCount)
+    this.props.addMovies(movies.results)
   }
 
-  pageCounter() {
-    this.setState({ counter: this.state.counter + 1 })
+  pageCounter(nextCount) {
+    this.setState({ counter: nextCount })
   }
 
   render() {
