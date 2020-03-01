@@ -10,12 +10,12 @@ import './App.css';
 export class App extends Component {
   async componentDidMount () {
     const movies = await fetchMovies(this.props.page)
-    this.props.addMovies(movies.results)
+    this.props.addMovies(movies)
   }
 
   async getMovies() {
     const movies = await fetchMovies(this.props.page)
-    this.props.addMovies(movies.results)
+    this.props.addMovies(movies)
   }
 
   render() {
@@ -23,14 +23,13 @@ export class App extends Component {
       <>
         <Header />
         <Route 
-        exact path='/'
-        render={() => 
-          <main>
-            <MovieContainer />
-          </main>} 
+          path='/'
+          render={() => <MovieContainer />} 
         />
         <Route 
-          path='page/' />
+          path='movies/:page' 
+          render={() => <MovieContainer />} 
+        />
       </>
     )
   }
