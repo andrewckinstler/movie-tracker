@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { fetchMovies } from '../../apiCalls/apiCalls';
 import { connect } from 'react-redux';
 import { addMovies } from '../../actions/index'
+import { Route } from 'react-router-dom';
 import './App.css';
 
 export class App extends Component {
@@ -30,10 +31,12 @@ export class App extends Component {
 
   render() {
     return(
-      <main>
+      <Route 
+      path='/'
+      render={() => <main>
         <h1>Hello World</h1>
         <button onClick={() => this.getMovies()}>{this.state.counter}</button>
-      </main>
+      </main>} />
     )
   }
 }
