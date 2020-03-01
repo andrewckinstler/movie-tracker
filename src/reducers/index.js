@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
 import { moviesReducer } from './movies';
+import { pageReducer } from './page'
 
 export const rootReducer = combineReducers({
-  movies: moviesReducer
+  movies: moviesReducer,
+  page: pageReducer
 })

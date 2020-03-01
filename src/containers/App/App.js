@@ -8,27 +8,14 @@ import MovieContainer from '../MovieContainer/MovieContainer';
 import './App.css';
 
 export class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      counter: 1
-    }
-  }
-
   async componentDidMount () {
-    const movies = await fetchMovies(this.state.counter)
+    const movies = await fetchMovies(this.props.page)
     this.props.addMovies(movies.results)
   }
 
   async getMovies() {
-    const nextCount = this.state.counter + 1;
-    this.pageCounter(nextCount);
-    const movies = await fetchMovies(nextCount)
+    const movies = await fetchMovies(this.props.page)
     this.props.addMovies(movies.results)
-  }
-
-  pageCounter(nextCount) {
-    this.setState({ counter: nextCount })
   }
 
   render() {
@@ -40,13 +27,18 @@ export class App extends Component {
         render={() => 
           <main>
             <MovieContainer />
-            <button onClick={() => this.getMovies()}>{this.state.counter}</button>
           </main>} 
         />
+        <Route 
+          path='page/' />
       </>
     )
   }
 }
+
+export const mapStateToProps = state => ({
+  page: state.page
+})
 
 export const mapDispatchToProps = dispatch => ({
   addMovies: movies => dispatch( addMovies(movies) )
