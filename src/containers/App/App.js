@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { fetchMovies } from '../apiCalls/apiCalls';
+import { fetchMovies } from '../../apiCalls/apiCalls';
 import { connect } from 'react-redux';
-import { addMovies } from '../actions/index'
+import { addMovies } from '../../actions/index'
 import './App.css';
 
 export class App extends Component {
