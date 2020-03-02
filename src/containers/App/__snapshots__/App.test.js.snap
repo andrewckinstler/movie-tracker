@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match a snapshot 1`] = `
+<Fragment>
+  <Header />
+  <Connect(Search) />
+  <NavLink
+    to="/watchlist"
+  >
+    Watchlist
+  </NavLink>
+  <Switch>
+    <Route
+      path="/watchlist"
+      render={[Function]}
+    />
+    <Route
+      path="/movies/:page"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/movie/:id"
+      render={[Function]}
+    />
+    <Route
+      path="/"
+      render={[Function]}
+    />
+  </Switch>
+</Fragment>
+`;
