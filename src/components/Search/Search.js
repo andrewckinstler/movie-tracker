@@ -17,6 +17,7 @@ export class Search extends Component {
 
   handleClick = async () => {
     const results = await search(this.state.keyword)
+    console.log(results)
     this.props.addMovies(results)
   }
 
