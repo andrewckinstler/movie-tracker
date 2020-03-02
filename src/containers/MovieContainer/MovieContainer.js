@@ -1,12 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { fetchMovies } from '../../apiCalls/apiCalls'
-import { MovieCard } from '../../components/MovieCard/MovieCard';
+import MovieCard from '../../components/MovieCard/MovieCard';
 import { addMovies, pageUp, pageDown } from '../../actions/index';
 import { Link } from 'react-router-dom';
 
 export const MovieContainer = ({ movies, page, pageUp, pageDown, addMovies }) => {
-  const movieCards = movies.map(movie => <MovieCard {...movie} key={movie.id} />)
+  const movieCards = movies.map(movie => {
+    if(movie.genre_ids.includes(27||53)) {
+      return <MovieCard {...movie} key={movie.id} />
+    }
+  })
 
   const forward = page => {
     pageUp(page)
