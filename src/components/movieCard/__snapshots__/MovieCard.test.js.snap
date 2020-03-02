@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieCard should match a snapshot 1`] = `
+<div>
+  <Link
+    to="movie/555974"
+  >
+    <article>
+      <h2>
+        The Invisible Man
+      </h2>
+      <img
+        src="https://image.tmdb.org/t/p/w300//4U7hpTK0XTQBKT5X60bKmJd05ha.jpg"
+      />
+    </article>
+  </Link>
+  <button
+    onClick={[Function]}
+  >
+    Add to your watchlist
+  </button>
+</div>
+`;
