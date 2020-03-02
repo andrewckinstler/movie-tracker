@@ -11,4 +11,4 @@ export const pageUp = page => ({
 export const pageDown = page => ({
   type: 'PAGE_DOWN',
   page
-})
+});
