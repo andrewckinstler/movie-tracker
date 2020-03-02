@@ -8,19 +8,19 @@ import { Link } from 'react-router-dom';
 export const MovieContainer = ({ movies, page, pageUp, pageDown, addMovies }) => {
   const movieCards = movies.map(movie => <MovieCard {...movie} key={movie.id} />)
 
-  const getMovies = async page => {
-    const movies = await fetchMovies(page)
-    addMovies(movies)
-  }
-
   const forward = page => {
     pageUp(page)
-    getMovies(page)
+    getMovies(page + 1)
   }
   
   const backward = page => {
     pageDown(page)
-    getMovies(page)
+    getMovies(page - 1)
+  }
+
+  const getMovies = async page => {
+    const movies = await fetchMovies(page)
+    addMovies(movies)
   }
 
   return ( 

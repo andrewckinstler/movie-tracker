@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { fetchMovies } from '../../apiCalls/apiCalls';
 import { connect } from 'react-redux';
 import { addMovies } from '../../actions/index'
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { Header } from '../../components/header/header'
 import MovieContainer from '../MovieContainer/MovieContainer';
+import { MovieDetail } from '../MovieDetail/MovieDetail';
+import Search from '../../components/Search/Search'
 import './App.css';
 
 export class App extends Component {
@@ -22,25 +24,34 @@ export class App extends Component {
     return(
       <>
         <Header />
-        <Route 
-          path='/'
-          render={() => <MovieContainer />} 
-        />
-        <Route 
-          path='movies/:page' 
-          render={() => <MovieContainer />} 
-        />
+        <Search />
+        <Switch>
+          <Route 
+            path='/movies/:page' 
+            render={() => <MovieContainer />} 
+          />
+          <Route 
+            exact path='/movie/:id'
+            render={({ match }) => <MovieDetail 
+              selectedMovie={this.props.movies.find(movie => movie.id === parseInt(match.params.id))} />}
+          />
+          <Route 
+            path='/'
+            render={() => <MovieContainer />} 
+          />
+        </Switch>
       </>
     )
   }
 }
 
 export const mapStateToProps = state => ({
-  page: state.page
+  page: state.page,
+  movies: state.movies
 })
 
 export const mapDispatchToProps = dispatch => ({
   addMovies: movies => dispatch( addMovies(movies) )
 })
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
