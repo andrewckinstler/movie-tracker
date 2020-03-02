@@ -24,9 +24,8 @@ export class App extends Component {
   render() {
     return(
       <>
-        <Header />
-        <Search />
-        <NavLink to='/watchlist'>Watchlist</NavLink>
+      <Header />
+      <div className='app'>
         <Switch>
           <Route 
             path='/watchlist'
@@ -46,6 +45,7 @@ export class App extends Component {
             render={() => <MovieContainer />} 
           />
         </Switch>
+      </div>
       </>
     )
   }

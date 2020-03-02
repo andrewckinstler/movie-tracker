@@ -4,6 +4,7 @@ import { fetchMovies } from '../../apiCalls/apiCalls'
 import MovieCard from '../../components/MovieCard/MovieCard';
 import { addMovies, pageUp, pageDown } from '../../actions/index';
 import { Link } from 'react-router-dom';
+import './MovieContainer.css'
 
 export const MovieContainer = ({ movies, page, pageUp, pageDown, addMovies }) => {
   const movieCards = movies.map(movie => {
@@ -28,13 +29,17 @@ export const MovieContainer = ({ movies, page, pageUp, pageDown, addMovies }) =>
   }
 
   return ( 
-    <div>
+    <main>
+    <div className='movie-container'>
       {movieCards}
-      {page > 1 && 
-      <Link to={`movies/page/${page - 1}`} onClick={() => backward(page)}>{page - 1}</Link>}
-      <span>{page}</span>
-      <Link to={`movies/page/${page + 1}`} onClick={() => forward(page) }>{page + 1}</Link>
     </div>
+    <div className='button-container'>
+      {page > 1 && 
+      <Link className='page-buttons' to={`movies/page/${page - 1}`} onClick={() => backward(page)}>{page - 1}</Link>}
+      <span>{page}</span>
+      <Link className='page-buttons' to={`movies/page/${page + 1}`} onClick={() => forward(page) }>{page + 1}</Link>
+    </div>
+    </main>
   )
 }
 
