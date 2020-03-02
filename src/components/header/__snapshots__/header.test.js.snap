@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`header should match a snapshot 1`] = `
+<header>
+  <h1>
+    Movie Tracker
+  </h1>
+</header>
+`;
