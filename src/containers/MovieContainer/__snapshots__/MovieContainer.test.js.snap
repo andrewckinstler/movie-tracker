@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieContainer should match a snapshot 1`] = `
+<div>
+  <Connect(MovieCard)
+    genre_ids={
+      Array [
+        27,
+        9648,
+        878,
+        53,
+      ]
+    }
+    id={555974}
+    key="555974"
+    overview="When Cecilia's abusive ex takes his own life and leaves her his fortune, she suspects his death was a hoax. As a series of coincidences turn lethal, Cecilia works to prove that she is being hunted by someone nobody can see."
+    release_date="2020-02-26"
+    title="The Invisible Man"
+  />
+  <Connect(MovieCard)
+    genre_ids={
+      Array [
+        27,
+        9648,
+        53,
+      ]
+    }
+    id={570670}
+    key="570670"
+    overview="After a family moves into the Heelshire Mansion, their young son soon makes friends with a life-like doll called Brahms."
+    release_date="2020-02-20"
+    title="Brahms: The Boy II"
+  />
+  <span>
+    1
+  </span>
+  <Link
+    onClick={[Function]}
+    to="movies/page/2"
+  >
+    2
+  </Link>
+</div>
+`;
