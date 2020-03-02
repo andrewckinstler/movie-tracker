@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { fetchMovies } from '../../apiCalls/apiCalls'
-import { MovieCard } from '../../components/MovieCard/MovieCard';
+import MovieCard from '../../components/MovieCard/MovieCard';
 import { addMovies, pageUp, pageDown } from '../../actions/index';
 import { Link } from 'react-router-dom';
 

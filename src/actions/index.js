@@ -12,3 +12,8 @@ export const pageDown = page => ({
   type: 'PAGE_DOWN',
   page
 });
+
+export const addToWatchList = toWatch => ({
+  type: 'ADD_FAVORITE',
+  toWatch
+})
