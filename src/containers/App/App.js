@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { fetchMovies } from '../../apiCalls/apiCalls';
 import { connect } from 'react-redux';
 import { addMovies } from '../../actions/index'
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, NavLink } from 'react-router-dom';
 import { Header } from '../../components/header/header'
 import MovieContainer from '../MovieContainer/MovieContainer';
+import Watchlist from '../Watchlist/Watchlist';
 import { MovieDetail } from '../MovieDetail/MovieDetail';
 import Search from '../../components/Search/Search'
 import './App.css';
@@ -25,7 +26,12 @@ export class App extends Component {
       <>
         <Header />
         <Search />
+        <NavLink to='/watchlist'>Watchlist</NavLink>
         <Switch>
+          <Route 
+            path='/watchlist'
+            render={() => <Watchlist />}
+          />
           <Route 
             path='/movies/:page' 
             render={() => <MovieContainer />} 
