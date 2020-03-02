@@ -7,4 +7,4 @@ export const pageReducer = (state = 1, action) => {
     default:
       return state;
   }
-}
+} 
