@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { search } from '../../apiCalls/apiCalls'
 import { addMovies } from '../../actions/index'
 import { connect } from 'react-redux'
+import './search.css'
 
 export class Search extends Component {
   constructor() {
@@ -17,13 +18,12 @@ export class Search extends Component {
 
   handleClick = async () => {
     const results = await search(this.state.keyword)
-    console.log(results)
     this.props.addMovies(results)
   }
 
   render() {
     return (
-      <>
+      <div className='search'>
       <input
           type="text"
           placeholder="Search movies"
@@ -31,8 +31,8 @@ export class Search extends Component {
           value={this.state.keyword}
           onChange={this.handleChange}
       />
-      <button onClick={this.handleClick}>Search</button>
-      </>
+      <button className='search-btn' onClick={this.handleClick}>Search</button>
+      </div>
     )
   }
 }

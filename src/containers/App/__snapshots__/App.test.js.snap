@@ -9,24 +9,28 @@ exports[`should match a snapshot 1`] = `
   >
     Watchlist
   </NavLink>
-  <Switch>
-    <Route
-      path="/watchlist"
-      render={[Function]}
-    />
-    <Route
-      path="/movies/:page"
-      render={[Function]}
-    />
-    <Route
-      exact={true}
-      path="/movie/:id"
-      render={[Function]}
-    />
-    <Route
-      path="/"
-      render={[Function]}
-    />
-  </Switch>
+  <div
+    className="app"
+  >
+    <Switch>
+      <Route
+        path="/watchlist"
+        render={[Function]}
+      />
+      <Route
+        path="/movies/:page"
+        render={[Function]}
+      />
+      <Route
+        exact={true}
+        path="/movie/:id"
+        render={[Function]}
+      />
+      <Route
+        path="/"
+        render={[Function]}
+      />
+    </Switch>
+  </div>
 </Fragment>
 `;

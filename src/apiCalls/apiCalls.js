@@ -21,6 +21,5 @@ export const search = keyword => {
               }
               return res.json()
             })
-            console.log(data)
   return data;
 }
