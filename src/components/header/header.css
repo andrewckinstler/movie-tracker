@@ -1,5 +1,5 @@
 h1{
-  font-family: 'Indie Flower' ;
+  font-family: 'Indie Flower';
   color: #D00000;
 }
 
@@ -9,7 +9,7 @@ header {
   background-color: #000;
 }
 
-.header-container{
+.header-container {
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -19,4 +19,5 @@ header {
 .nav {
   font-size: 1.5em;
   color: #D00000;
+  text-decoration: none;
 }
