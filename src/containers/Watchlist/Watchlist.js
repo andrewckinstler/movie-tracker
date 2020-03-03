@@ -2,6 +2,7 @@ import React from 'react';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import { connect } from 'react-redux'
 
+// adding a line to push
 
 export const Watchlist = ({ watchlist }) => {
   const movieCards = watchlist.map(movie => {
